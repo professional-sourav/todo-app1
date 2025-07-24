@@ -36,3 +36,19 @@ export async function getTodos(): Promise<Todo[]> {
     
     return await prisma.todo.findMany();
 }
+
+export async function createTodo(title: string, description: string | null, completee: boolean): Promise<Todo> {
+    const newTodo = await prisma.todo.create({
+        data: {
+            title,
+            description,
+            completed: completee,
+        },
+    });
+    
+    console.log('New todo created:', newTodo);
+    
+    return newTodo;
+
+
+}
