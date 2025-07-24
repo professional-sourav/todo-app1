@@ -1,3 +1,4 @@
+import SubmitButton from "@/components/submit";
 import { createTodo } from "@/prisma-db";
 import { redirect } from "next/navigation";
 
@@ -32,7 +33,8 @@ export default function CreateTodoPage() {
                     <label htmlFor="completed">Completed:</label>
                     <input type="checkbox" id="completed" name="completed" />
                 </div>
-                <button type="submit">Create Todo</button>
+                
+                <SubmitButton />
             </form>
         </div>
     );
